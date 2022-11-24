@@ -1,0 +1,171 @@
+
+/*********************************DISEÑO PARA ESCRITORIO*****************************/
+#boleta-container
+{
+    /* width: 50vw;
+    margin-left: 25vw;
+    margin-top: 5vw; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(223, 223, 223);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#boleta-container > section, #boleta-container > table
+{
+    width: 100%;
+    height: auto;
+}
+
+#boleta-empresa-section, #boleta-fecha-section
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#fecha-section-table1, #fecha-section-table2,
+#fecha-section-table1 td, #fecha-section-table2 td,
+#fecha-section-table1 th, #fecha-section-table2 th
+{
+    padding: 2px 5px;
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+}
+
+#boleta-cliente-section p
+{
+    padding: 5px 10px;
+}
+
+#boleta-table-section,
+#boleta-table-section td, #boleta-table-section th
+{
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#boleta-table-section tr:nth-last-child(3) td,
+#boleta-table-section tr:nth-last-child(2) td,
+#boleta-table-section tr:nth-last-child(1) td
+{
+    text-align: right;
+}
+
+#boleta-table-section tr:nth-last-child(3) td:last-child,
+#boleta-table-section tr:nth-last-child(2) td:last-child,
+#boleta-table-section tr:nth-last-child(1) td:last-child
+{
+    text-align: center;
+}
+
+#boleta-info-section
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#boleta-info-section p
+{
+    padding: 2px;
+}
+
+#boleta-info-section div:nth-child(2)
+{
+    align-self: flex-end;
+}
+
+
+
+/*************************************DESARROLLO PARA TABLET LANDSCAPE (large)*************************************/
+@media screen and (max-width: 1024px)/* and (min-height: 650px)*/
+{
+    
+#boleta-container
+{
+    min-height: 100vh;
+}
+
+section b, td, th, #boleta-cliente-section p
+{
+    font-size: 18px;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (large)*************************************/
+@media screen and (max-width: 768px)
+{
+
+/* No son necesarios estilos */
+
+}
+
+
+/******************************DESARROLLO TABLET LANDSCAPE (SMALL)************************************/
+@media screen and (max-width: 920px) and (max-height: 540px)
+{
+    
+/* No son necesarios estilos */
+
+}
+
+
+/*************************************DESARROLLO PARA MÓVIL LANDSCAPE*************************************/
+@media screen and (max-width: 740px) and (max-height: 415px)
+{
+
+/* No son necesarios estilos */
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (small)*************************************/
+@media screen and (max-width: 480px)
+{
+
+#boleta-container
+{
+    min-height: 100vh;
+}
+    
+#fecha-section-table1, #fecha-section-table2
+{
+    width: 40vw;
+}
+
+section b, td, th, #boleta-cliente-section p
+{
+    font-size: 12px;
+}
+
+#boleta-cliente-section p
+{
+    font-size: 14px;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA MÓVIL PORTRAIT*************************************/
+@media screen and (max-width: 320px)
+{
+
+#fecha-section-table1, #fecha-section-table2
+{
+    width: 35vw;
+}
+
+section b, td, th, #boleta-cliente-section p
+{
+    font-size: 11px;
+}
+
+}

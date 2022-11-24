@@ -1,0 +1,1579 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap');
+
+
+:root
+{
+    --color-negro:  black;
+    --color-blanco: white;
+    --color-azul: #103c8a;
+    --color-celeste: #46b9d6;
+    --color-turquesa: #02a6c6;
+    --color-verde: #033440;
+    --color-blanco-azulado: rgb(245, 250, 255);
+}
+
+/*************************************DESARROLLO PARA ESCRITORIO*************************************/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar
+{
+    width: 100vw;
+    height: 5vw;
+    background-color: var(--color-blanco);
+    border-bottom: 1px solid #cccccc;
+    color: var(--color-turquesa);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 25px;
+    z-index: 30;
+    position: fixed;
+    top: 0;
+}
+
+.ham-btn
+{
+    position: fixed;
+    display: none;
+}
+
+#logo
+{
+    height: 70%;
+    width: auto;
+}
+
+#logo > img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#text-header-container
+{
+    font-family: Signika, sans-serif;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+#user-container
+{
+    font-size: 1.2vw;
+    font-family: Signika, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all ease 0.17s;
+    z-index: 30;
+}
+
+#user-container:hover
+{
+    color: var(--color-azul);
+}
+
+#user-icon
+{
+    font-size: 1.2vw;
+    margin-left: 10px;
+}
+
+#user-info
+{
+    width: 15vw;
+    height: 3vw;
+    background-color: var(--color-blanco);
+    position: fixed;
+    top: 0;
+    justify-content: space-around;
+    right: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    transition: all ease 0.25s;
+    z-index: 20;
+}
+
+#user-info div
+{
+    width: 50%;
+    border-right: 1px solid #cccccc;
+    padding: 0px 5px;
+    text-align: center;
+}
+
+#user-info a
+{
+    text-decoration: none;
+    font-size: 0.9vw;
+    color: var(--color-turquesa);
+    font-weight: 600;
+    font-family: signika, sans-serif;
+    transition: all ease 0.18s;
+}
+
+#user-info a:hover
+{
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+#user-info > input
+{
+    width: 50%;
+}
+
+.desplegar-active
+{
+    top: 5vw !important;
+}
+
+#logout
+{
+    width: 100%;
+    border: none;
+    color: var(--color-turquesa);
+    background-color: transparent;
+    text-align: center;
+    font-family: signika, sans-serif;
+    font-size: 1vw;
+    font-weight: 600;
+    transition: all ease 0.18s;
+    cursor: pointer;
+}
+
+#logout:hover
+{
+    color: var(--color-azul);
+}
+
+#panel
+{
+    width: 20vw;
+    height: calc(100vh - 5vw);
+    position: fixed;
+    left: 0;
+    top: 5vw;
+    background: linear-gradient(to bottom, var(--color-turquesa), var(--color-azul) 90%);
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 25px 25px;
+    align-items: flex-start;
+    font-size: 1vw;
+    font-weight: 600;
+    font-family: Signika, sans-serif;
+    color: var(--color-blanco);
+}
+
+#panel > div
+{
+    transition: all ease 0.17s;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 15px 0;
+}
+
+#panel > div:hover
+{
+    font-size: 1.2vw;
+}
+
+#content-container
+{
+    position: relative;
+    width: 80vw;
+    margin-left: 20vw;
+    height: calc(100vh - 5vw);
+    margin-top: 5vw;
+    overflow: hidden;
+}
+
+.content-containers
+{
+    top: -150%;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+    padding: 0 25px;
+}
+
+.content-containers h2
+{
+    color: var(--color-azul);
+    width: 100%;
+}
+
+#user-information-container
+{   
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.content-containers > label > b
+{
+    color: var(--color-azul);
+}
+
+#user-purchases-container
+{
+    width: 100%;
+    padding: 0;
+    overflow-y: scroll;
+    border: none;
+    height: 100%;
+}
+
+#user-purchases-container > h1
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 40%;
+    color: var(--color-azul);
+}
+
+#user-purchases-container::-webkit-scrollbar
+{
+    width: 12px;
+}
+
+#user-purchases-container::-webkit-scrollbar-track
+{
+    background-color: var(--color-blanco-azulado);
+}
+
+#user-purchases-container::-webkit-scrollbar-thumb
+{
+    background-color: var(--color-azul);
+    border: 2px solid var(--color-blanco-azulado);
+    border-radius: 10px;
+}
+
+#compras-container
+{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#cabecera
+{
+    height: 2.5vw;
+    font-size: 20px;
+    color: var(--color-azul);
+}
+
+#cabecera > th
+{
+    width: 33%;
+    background-color: var(--color-blanco-azulado);
+}
+
+.compra-row
+{
+    height: 3vw;
+    border: 1px solid #cccccc;
+    background-color: var(--color-blanco-azulado);
+}
+
+.compra-row:nth-child(even)
+{
+    background-color: #d4f6ff;
+}
+
+td, th
+{
+    border: 1px solid #cccccc;
+    border-top: 0;
+}
+
+.btn-detalles
+{
+    background-color: transparent;
+    border: none;
+    color: #103c8a;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-detalles:hover
+{
+    color: rgb(42, 42, 255);
+}
+
+.first-column
+{
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: repeat(2, 20%);
+    height: 100%;
+    border: none;
+    justify-content: center;
+    line-height: 3vw;
+}
+
+#user-history-container
+{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    align-content: flex-start;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+#user-history-container > h2
+{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 20%;
+    width: unset;
+    font-size: 30px;
+    color: var(--color-azul);
+}
+
+.history-item
+{
+    width: 100%;
+    height: 9vw;
+    padding-left: 20px;
+    background-color: var(--color-blanco);
+    display: grid;
+    grid-template-columns: 12% 20% 58% 10%;
+    grid-template-rows: 100%;
+    align-items: center;
+    font-family: signika, sans-serif;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.history-item > p
+{
+    font-size: 16px;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: 70%;
+}
+
+.btn1
+{
+    width: 1.5vw;
+    height: 1.5vw;
+    justify-self: center;
+    font-size: 5px;
+    cursor: pointer;
+    transition: all ease .2s;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.btn1 > i
+{
+    font-size: 14px;
+}
+
+.btn1:hover
+{
+    background-color: red;
+    color: white;
+}
+
+.prod-img
+{
+    height: 8vw;
+    width: 6.7vw;
+}
+
+#change-data-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+#change-data-container > div
+{
+    color: var(--color-azul);
+    width: 50%;
+}
+
+.change-data-inputs
+{
+    width: 40%;
+    line-height: 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-negro);
+    padding: 0px 5px;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button
+{
+    display: none;
+}
+
+::-webkit-calendar-picker-indicator
+{
+    background-color: var(--color-celeste);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#change-data-container > div:last-child
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-negro);
+}
+
+#change-data-container input[type=button]
+{
+    width: 20%;
+    height: 5vh;
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+    transition: all ease 0.2s;
+    width: 10vw;
+}
+
+#change-data-container input[type=button]:hover
+{
+    cursor: pointer;
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+}
+
+#security-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#security-container b
+{
+    color: var(--color-azul);
+    font-size: 15px;
+}
+
+#security-container input[type=password]
+{
+    width: 20%;
+    border-radius: 5px;
+    line-height: 20px;
+    border: 1px solid var(--color-negro);
+    padding: 0px 5px;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+}
+
+#security-container input[type=button], #security-container input[type=submit]
+{
+    width: 10%;
+    height: 15%;
+    border-radius: 10px;
+    padding: 0px 5px;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+    transition: all ease 0.2s;
+}
+
+i
+{
+    font-size: 20px;
+}
+
+#security-container input[type=button]:hover, #security-container input[type=submit]:hover
+{
+    cursor: pointer;
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+}
+
+#security-container > form
+{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.function-in
+{
+    transition: all ease 0.5s;
+    top: 50%;
+    transform: translateY(-50%);
+}
+    
+.function-out
+{
+    transition: all ease 0.5s;
+    top: 150% !important;
+}
+
+
+/*******************DESARROLLO PARA TABLET LANDSCAPE (LARGE)**********************************************/
+@media screen and (max-width: 1024px)
+{
+
+#navbar
+{
+    height: 6vw;
+}
+
+#text-header-container, #user-container
+{
+    font-size: 20px;
+}
+
+#user-container i
+{
+    font-size: 15px;
+}
+
+#logo
+{
+    width: 4vw;
+    height: auto;
+}
+
+#user-info
+{
+    width: 25vw;
+    height: 4vw;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 13px;
+}
+
+.desplegar-active
+{
+    top: 6vw !important;
+}
+
+#panel
+{
+    padding: 25px 0 0 25px;
+}
+
+#panel div
+{
+    font-size: 14px;
+}
+
+#panel div:hover
+{
+    font-size: 14.5px;
+}
+
+#content-container
+{
+    height: 60vw;
+    margin-top: 6vw;
+}
+
+#user-information-container
+{
+    width: 100%;
+    height: 100%;
+    padding: 0 25px;
+}
+
+#user-information-container label
+{
+    font-size: 17px;
+}
+
+#user-information-container b
+{
+    font-size: 18px;
+}
+
+#user-purchases-container
+{
+    width: 100%;
+}
+
+#user-purchases-container th
+{
+    height: 4vw;
+}
+
+#user-purchases-container tr:not(#cabecera)
+{
+    height: 5.5vw;
+}
+
+td
+{
+    font-size: 20px;
+}
+
+.first-column
+{
+    line-height: 5.5vw;
+}
+
+
+.history-item
+{
+    height: 15vw;
+}
+
+.history-item > p
+{
+    font-size: 20px;
+}
+
+.btn1
+{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 25px;
+}
+
+.btn1 > i
+{
+    font-size: 20px;
+}
+
+#change-data-container
+{
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+#change-data-container
+{
+    font-size: 18px;
+}
+
+.change-data-inputs
+{
+    height: 3vw;
+    width: 20vw;
+    font-size: 18px;
+}
+
+#change-data-container input[type=button]
+{
+    height: 4.5vw;
+    font-size: 18px;
+}
+
+#security-container b
+{
+    font-size: 18px;
+}
+
+#security-container div
+{
+    height: 3vw;
+}
+
+#security-container div > input[type=password]
+{
+    height: 3vw;
+    width: 20vw;
+}
+
+#security-container input[type=button], #security-container input[type=submit]
+{
+    width: 10vw;
+    height: 5vw;
+    font-size: 16px;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (LARGE)*************************************/
+@media screen and (max-width: 768px)
+{
+
+#navbar
+{
+    height: 10vw;
+    padding-left: 100px;
+}
+
+.ham-btn
+{
+    display: block;
+    left: 30px;
+    top: 4vw;
+    font-size: 18px;
+    z-index: 60;
+    color: var(--color-turquesa);
+    transition: all ease .5s;
+    cursor: pointer;
+}
+
+#logo
+{
+    display: none;
+}
+
+#text-header-container, #user-container, #user-container i
+{
+    font-size: 18px;
+}
+
+#user-info
+{
+    width: 35vw;
+    height: 5.5vh;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 14px;
+}
+
+.desplegar-active
+{
+    top: 8vh !important;
+}
+
+#panel
+{
+    width: 35vw;
+    transition: all ease .5s;
+    top: 0;
+    z-index: 55;
+    left: -40vw;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+#panel > div
+{
+    font-size: 16px;
+}
+
+#panel > div:hover
+{
+    font-size: 17px;
+}
+
+.menu-active
+{
+    left: 0 !important;
+}
+
+.btn-active
+{
+    left: 30vw !important;
+    transform: rotate(180deg);
+    color: var(--color-blanco) !important;
+}
+
+#content-container
+{
+    width: 100vw;
+    margin-top: 10vw;
+    height: 111vw;
+    margin-left: 0;
+}
+
+#user-information-container
+{
+    justify-content: space-evenly;
+}
+
+#user-information-container b, #user-information-container label
+{
+    font-size: 20px;
+}
+
+#user-information-container > h2
+{
+    display: none;
+}
+
+#compras-container th
+{
+    height: 4vh;
+}
+
+#compras-container td
+{
+    height: 5.5vh;
+    /* line-height: 4.5vh; */
+}
+
+.history-item
+{
+    height: 15vw;
+}
+
+.history-item > p
+{
+    font-size: 20px;
+}
+
+.btn1
+{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 25px;
+}
+
+.btn1 > i
+{
+    font-size: 20px;
+}
+
+#change-data-container
+{
+    justify-content: space-evenly;
+}
+
+#change-data-container > div
+{
+    width: 100%;
+    height: 4vw;
+}
+
+#change-data-container b
+{
+    font-size: 20px;
+}
+
+.change-data-inputs
+{
+    height: 4vw;
+    font-size: 18px;
+}
+
+#change-data-container > input[type=button]
+{
+    width: 20vw;
+    font-size: 20px;
+    height: 5vw;
+}
+
+#security-container h2, #security-container i
+{
+    font-size: 30px;
+}
+
+#security-container div
+{
+    height: 5vw;
+}
+
+#security-container div input[type=password]
+{
+    height: 4.5vw;
+    width: 40%;
+}
+
+#security-container b
+{
+    font-size: 22px;
+}
+
+#security-container input[type=submit], #security-container input[type=button]
+{
+    width: 25vw;
+    font-size: 20px;
+    height: 6vw;
+}
+
+#security-container p
+{
+    font-size: 20px;
+}
+
+}
+
+
+/************************DESARROLLO TABLET LANDSCAPE (SMALL)************************************/
+@media screen and (max-width: 920px) and (max-height: 540px) and (orientation: landscape)
+{
+
+#navbar
+{
+    height: 7vw;
+    padding-left: 100px;
+}
+
+#logo
+{
+    display: none;
+}
+
+#text-header-container, #user-container, #user-container i
+{
+    font-size: 14px;
+}
+
+#user-info
+{
+    width: 30vw;
+    height: 6vw;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 12px;
+}
+
+.desplegar-active
+{
+    top: 7vw !important;
+}
+
+.ham-btn
+{
+    display: block;
+    font-size: 16px;
+    left: 25px;
+    top: 2.5vw;
+    color: var(--color-turquesa);
+    z-index: 70;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+
+#content-container
+{
+    width: 100vw;
+    margin-left: 0;
+    height: 35vw;
+    margin-top: 7vw;
+    position: absolute;
+}
+
+#panel
+{
+    width: 30vw;
+    height: 100vh;
+    z-index: 65;
+    top: 0;
+    padding: 30px 0 0 25px;
+    left: -35vw;
+    transition: all ease .5s;
+}
+
+#panel > div
+{
+    font-size: 13px;
+}
+
+#panel > div:hover
+{
+    font-size: 14px;
+}
+
+.menu-active
+{
+    left: 0 !important;
+}
+
+.btn-active
+{
+    left: 25vw !important;
+    transform: rotate(180deg) !important;
+    color: var(--color-blanco);
+}
+
+#user-information-container
+{
+    padding: 10px 0 0 10px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(5, 20%);
+    grid-gap: 0;
+}
+
+#user-information-container label
+{
+    font-size: 16px;
+}
+
+#user-information-container label:nth-child(6)
+{
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+#user-information-container label:nth-child(9)
+{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#user-information-container > h2
+{
+    display: none;
+}
+
+#user-information-container b
+{
+    font-size: 16px;
+}
+
+#user-purchases-container
+{
+    width: 100vw;
+    height: 100%;
+    border: none;
+}
+
+#user-purchases-container th
+{
+    height: 5vh;
+}
+
+#user-purchases-container tr, .first-column
+{
+    height: 7vh;
+}
+
+#change-data-container
+{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(6, 15%);
+    padding-top: 10px;
+}
+
+#change-data-container > div
+{
+    width: 100%;
+}
+
+#change-data-container input[type=button]
+{
+    width: 15vw;
+    height: 4vw;
+}
+
+#change-data-container p
+{
+    height: 100%;
+}
+
+#security-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#security-container > form
+{
+    height: 35vw;
+}
+
+#security-container div input[type=password]
+{
+    height: 4vw;
+}
+
+#security-container input[type=button], #security-container input[type=submit]
+{
+    width: 35%;
+    height: 5vw;
+}
+
+#security-container b
+{
+    font-size: 18px;
+}
+
+#security-container h2, #security-container i
+{
+    font-size: 20px;
+}
+
+#security-container p
+{
+    font-size: 16px;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA MÓVIL LANDSCAPE*************************************/
+@media screen and (max-width: 740px) and (max-height: 415px)
+{
+
+#content-container
+{
+    height: 45vw;
+}
+
+#change-data-container
+{
+    grid-template-columns: 60% 40%;
+    font-size: 15px;
+}
+
+#change-data-container input[type=button]
+{
+    width: 15vw;
+    height: 6vw;
+    font-size: 15px;
+}
+
+#change-data-container b
+{
+    font-size: 14px;
+}
+
+.change-data-inputs
+{
+    font-size: 14px;
+    width: 25vw;
+}
+
+#user-information-container label, #user-information-container b
+{
+    font-size: 12px;
+}
+
+#panel > div
+{
+    font-size: 10px;
+}
+
+td
+{
+    font-size: 12px;
+}
+
+.history-item > p
+{
+    font-size: 12px;
+}
+
+.btn1 i
+{
+    font-size: 12px;
+}
+
+#security-container > form
+{
+    justify-content: space-between;
+}
+
+#security-container h2, #security-container i
+{
+    font-size: 16px;
+}
+
+#security-container b
+{
+    font-size: 14px;
+}
+
+#security-container div input[type=password]
+{
+    width: 35%;
+    height: 3.5vw;
+}
+
+#security-container input[type=button]
+{
+    font-size: 12px;
+}
+
+#security-container p
+{
+    font-size: 14px;
+}
+
+}
+
+/*******************DESARROLLO TABLET PORTRAIT(small)*************************/
+@media screen and (max-width: 480px)
+{
+
+#navbar
+{
+    height: 16vw;
+    padding-left: 80px;
+}
+
+.ham-btn
+{
+    transition: all ease .5s;
+    font-size: 19px;
+    cursor: pointer;
+    left: 25px;
+    top: 5vw;
+    color: var(--color-turquesa);
+    z-index: 60;
+}
+
+#logo
+{
+    display: none;
+}
+
+#text-header-container, #user-container, #user-container i
+{
+    font-size: 15px;
+}
+
+#user-info
+{
+    width: 50vw;
+    height: 13vw;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 13px;
+}
+
+.desplegar-active
+{
+    top: 16vw !important;
+}
+
+#panel
+{
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    left: -55vw;
+    transition: all ease .5s;
+    z-index: 50;
+    padding-top: 50px;
+}
+
+#panel > div
+{
+    font-size: 12px;
+}
+
+#panel > div:hover
+{
+    font-size: 13px;
+}
+
+.menu-active
+{
+    left: 0 !important;
+}
+
+.btn-active
+{
+    left: 40vw !important;
+    transform: rotate(180deg) !important;
+    color: var(--color-blanco);
+}
+
+#content-container
+{
+    width: 100vw;
+    margin-left: 0;
+    margin-top: 16vw;
+    height: 185vw;
+}
+
+#compras-container th
+{
+    height: 4vh;
+    font-size: 18px;
+}
+
+#compras-container td
+{
+    height: 5vh;
+    font-size: 14px;
+}
+
+.first-column
+{
+    line-height: 6vh;
+}
+
+.history-item
+{
+    height: 25vw;
+    grid-template-columns: 17% 20% 53% 10%;
+    padding-left: 10px;
+}
+
+.prod-img
+{
+    height: auto;
+    width: 85%;
+}
+
+.history-item p
+{
+    font-size: 12px;
+}
+
+.btn1
+{
+    width: 6vw;
+    height: 6vw;
+}
+
+.btn1 i
+{
+    font-size: 12px;
+}
+
+#change-data-container > div
+{
+    width: 100vw;
+}
+
+.change-data-inputs
+{
+    width: 35%;
+    height: 6vw;
+}
+
+#change-data-container input[type=button]
+{
+    width: 30vw;
+    height: 10vw;
+}
+
+#mensajesModificar
+{
+    width: 80vw;
+    font-size: 18px;
+}
+
+#security-container h2, #security-container i
+{
+    font-size: 18px;
+}
+
+#security-container b
+{
+    font-size: 14px;
+}
+
+#security-container > form
+{
+    width: 100%;    
+}
+
+#security-container input[type=password]
+{
+    width: 35%;
+    height: 6vw;
+}
+
+#security-container input[type=button], #security-container input[type=submit]
+{
+    width: 30vw;
+    height: 10vw;
+}
+
+#security-container p
+{
+    font-size: 16px;
+}
+
+
+#security-container div input[type=password]
+{
+    height: 6.5vw;
+}
+
+}
+
+/*************************************DESARROLLO PARA MÓVIL PORTRAIT*************************************/
+@media screen and (max-width: 320px)
+{
+
+#navbar
+{
+    height: 14vw;
+}
+
+#text-header-container, #user-container, #user-container i
+{
+    font-size: 12px;
+}
+
+.ham-btn
+{
+    top: 6vw;
+    font-size: 14px;
+}
+
+#user-info
+{
+    width: 50vw;
+    height: 12vw;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 10px;
+}
+
+.desplegar-active
+{
+    top: 14vw !important;
+}
+
+.content-containers
+{
+    padding: 0 10px;
+}
+
+#user-information-container
+{
+    padding-top: 15px;
+    display: grid;
+}
+
+#user-information-container b, #user-information-container label
+{
+    font-size: 12px;
+}
+
+#content-container
+{
+    margin-top: 14vw;
+    height: 150vw;
+}
+
+#panel > div
+{
+    font-size: 12px;
+}
+
+#panel > div:hover
+{
+    font-size: 13px;
+}
+
+#user-purchases-container tr
+{
+    height: 7vh;
+    font-size: 12px;
+}
+
+#compras-container th
+{
+    height: 4vh;
+    font-size: 12px;
+}
+
+#change-data-container > div
+{
+    height: 10vw;
+    width: 100%;
+}
+
+.first-column
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#change-data-container
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    padding: 0 10px;
+}
+
+#change-data-container input[type=button]
+{
+    width: 25vw;
+    height: 12vw;
+    font-size: 14px;
+}
+
+#change-data-container p
+{
+    height: auto;
+    width: 100%;
+}
+
+#change-data-container b
+{
+    font-size: 14px;
+}
+
+.change-data-inputs
+{
+    font-size: 12px;
+}
+
+#mensajesModificar
+{
+    font-size: 12px;
+}
+
+#security-container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#security-container > form
+{
+    width: 100%;
+    height: 40%;
+}
+
+#security-container b
+{
+    font-size: 12px;
+}
+
+#security-container > input[type=password]
+{
+    width: 35%;
+}
+
+#security-container input[type=button]
+{
+    font-size: 14px;
+}
+
+
+}

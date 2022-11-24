@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap');
+
+
+:root
+{
+    --color-negro:  black;
+    --color-blanco: white;
+    --color-azul: #103c8a;
+    --color-celeste: #46b9d6;
+    --color-turquesa: #02a6c6;
+    --color-blanco-azulado: rgb(245, 250, 255);
+}
+
+/*********************************DISEÑO PARA ESCRITORIO*****************************/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    overflow-x: hidden;
+    background-color: var(--color-blanco-azulado);;
+}
+
+#navbar
+{
+    width: 100vw;
+    height: 5vw;
+    background-color: var(--color-blanco);
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #cccccc;
+    align-items: center;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    transition: all ease 0.2s;
+}
+
+.ham-btn, #text-header-container, #menu-movil
+{
+    display: none;
+}
+
+#user-container
+{
+    width: fit-content;
+    max-width: 15%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    font-family: signika, sans-serif;
+    font-size: 15px;
+    color: var(--color-turquesa);
+    transition: all ease 0.18s;
+    height: 3vw;
+    line-height: 3vw;
+    font-weight: 500;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#user-container:hover
+{
+    cursor: pointer;
+    color: var(--color-azul);
+}
+
+#user-icon
+{
+    margin-left: 0.5vw;
+    line-height: 3vw;
+}
+
+#items-container
+{
+    width: 40%;
+    height: 4vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Signika, sans-serif;
+    font-size: 15px;
+}
+
+#items-container > a
+{
+    color: var(--color-turquesa);
+    text-decoration: none;
+    transition: all ease .2s;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#items-container > a:hover
+{
+    color: var(--color-azul);
+}
+
+#user-info
+{
+    width: 25vw;
+    height: 3vw;
+    background-color: var(--color-blanco);
+    position: fixed;
+    top: -10vw;
+    right: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+    transition: all ease 0.25s;
+    z-index: 29;
+}
+
+#user-info div
+{
+    width: 33%;
+    border-right: 1px solid #cccccc;
+    padding: 0px 5px;
+    text-align: center;
+}
+
+#user-info > input
+{
+    width: 33%;
+}
+
+.desplegar-active
+{
+    top: calc(5vw - 1px) !important;
+}
+
+#user-info a
+{
+    text-decoration: none;
+    font-size: 0.9vw;
+    color: var(--color-turquesa);
+    font-weight: 600;
+    font-family: signika, sans-serif;
+    transition: all ease 0.18s;
+}
+
+#user-info a:hover
+{
+    color: var(--color-azul);
+    font-weight: 600;
+}
+
+#logout
+{
+    width: 30%;
+    background-color: transparent;
+    border: none;
+    color: var(--color-turquesa);
+    text-align: center;
+    font-family: signika, sans-serif;
+    font-size: 1vw;
+    font-weight: 600;
+    transition: all ease 0.18s;
+    cursor: pointer;
+}
+
+#logout:hover
+{
+    color: var(--color-azul);
+}
+
+.header-items
+{
+    width: fit-content;
+    height: 100%;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-items > a
+{
+    text-decoration: none;
+    color: var(--color-turquesa);
+    font-weight: 600;
+    transition: all ease 0.18s;
+}
+
+.header-items > a:hover
+{
+    color: var(--color-azul);
+}
+
+#logo
+{
+    width: auto;
+    height: 70%;
+}
+
+#logo > img
+{
+    width: 100%;
+    height: 100%;
+}
+
+#icons-container
+{
+    width: 10%;
+    height: 3vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-icons
+{
+    color: var(--color-turquesa);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all ease 0.18s;
+    line-height: 3vw;
+}
+
+
+.header-icons:hover
+{
+    color: var(--color-azul);
+}
+
+
+/*************************************DESARROLLO PARA TABLET LANDSCAPE (large)*************************************/
+@media screen and (max-width: 1024px)/* and (min-height: 650px)*/
+{
+    
+#navbar
+{
+    height: 6vw;
+}
+
+#items-container
+{
+    width: 33vw;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#user-info
+{
+    height: 4vw;
+}
+
+#user-info a, #user-info input
+{
+    font-size: 12px;
+}
+
+#user-info > div
+{
+    height: 50%;
+}
+
+.desplegar-active
+{
+    top: 6vw !important;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (large)*************************************/
+@media screen and (max-width: 768px)
+{
+
+#navbar
+{
+    height: 10vw;
+}
+
+#items-container
+{
+    width: 50vw;
+    height: 100%;
+}
+
+#items-container > a, #user-container
+{
+    font-size: 20px;
+}
+
+.header-items, .header-icons
+{
+    font-size: 20px;
+}
+
+#user-info
+{
+    height: 7vw;
+    width: 50vw;
+    left: unset;
+    right: 0;
+}
+
+#user-info div
+{
+    height: 45%;
+}
+
+#user-info > div > a, #user-info > input
+{
+    font-size: 17px;
+}
+
+.desplegar-active
+{
+    top: 10vw !important;
+}
+
+}
+
+
+/******************************DESARROLLO TABLET LANDSCAPE (SMALL)************************************/
+@media screen and (max-width: 920px) and (max-height: 540px)
+{
+    
+#navbar
+{
+    height: 6vw;
+}
+
+#items-container
+{
+    width: 50vw;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#items-container > a, .header-icons, #user-container
+{
+    font-size: 16px;
+}
+
+#user-info
+{
+    height: 5vw;
+    width: 30vw;
+    padding: 0;
+    left: unset;
+    right: 0;
+    align-content: center;
+}
+    
+#user-info > div
+{
+    line-height: 15px;
+}
+
+#user-info div > a
+{
+    font-size: 12px;
+}
+    
+#user-info input
+{
+    font-size: 12px;
+}
+
+.desplegar-active
+{
+    top: 6vw !important;
+}
+
+}
+
+
+
+/*************************************DESARROLLO PARA MÓVIL LANDSCAPE*************************************/
+@media screen and (max-width: 740px) and (max-height: 415px)
+{
+
+#navbar
+{
+    height: 8vw;
+}
+
+#items-container
+{
+    width: 50vw;
+    justify-content: space-between;
+}
+
+#items-container > a
+{
+    font-size: 12px;
+}
+
+.header-icons, #user-container
+{
+    font-size: 12px;
+}
+
+.desplegar-active
+{
+    top: 8vw !important;
+}
+
+#user-info
+{
+    height: 6vw;
+    width: 40vw;
+}
+
+#user-info > div > a, #user-info input
+{
+    font-size: 12px;
+}
+
+#menu-logo
+{
+    width: 30%;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (small)*************************************/
+@media screen and (max-width: 480px) /*and (max-height: 800px)*/
+{
+
+#navbar
+{
+    width: 100vw;
+    height: 12vw;
+    padding: 0 0 0 10px;
+    justify-content: space-around;
+    position: fixed;
+    top: 0%;
+}
+
+.ham-btn
+{
+    display: block;
+    color: var(--color-turquesa);
+    cursor: pointer;
+    position: fixed;
+    z-index: 35;
+    top: 2vh;
+    left: 20px;
+    transition: all ease-out 0.3s;
+    background-color: var(--color-blanco);
+}
+
+.ham-btn:active
+{
+    color: var(--color-azul);
+}
+
+#logo
+{
+    display: none;
+
+}
+
+.header-icons
+{
+    font-size: 12px;
+}
+
+.header-icons:hover
+{
+    color: var(--color-azul);
+}
+
+#items-container
+{
+    display: none;
+}
+
+#user-container
+{
+    font-size: 15px;
+}
+
+#user-info
+{
+    width: 70vw;
+    height: 12vw;
+}
+
+#user-info > div > a, #user-info input
+{
+    font-size: 12px;
+}
+
+.desplegar-active
+{
+    top: 12vw !important;
+}
+
+#text-header-container
+{
+    display: block;
+    font-family: signika, sans-serif;
+    color: var(--color-turquesa);
+    font-size: 15px;
+}
+
+.header-icons:active
+{
+    color: var(--color-azul);
+}
+
+#menu-movil
+{   
+    left: calc(-45vw - 1px);
+    width: 45vw;
+    height: 100vh;
+    position: fixed;
+    top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+    background-color: var(--color-blanco);
+    z-index: 33;
+    border-right: 1px solid #cccccc;
+    transition: all ease-out 0.3s;
+}
+
+.menu-active
+{
+    left: 0% !important;
+}
+
+.btn-active
+{
+    left: 38.5vw !important;
+    transform: rotate(180deg);
+}
+
+.movil-items
+{
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 80%;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: Signika, sans-serif;
+    color: var(--color-turquesa);
+    transition: all 0.2s;
+}
+
+.movil-items:hover
+{
+    color: var(--color-azul);
+}
+
+#logout
+{
+    font-size: 15px;
+    width: 100%;
+    height: fit-content;
+}
+
+#icons-container
+{
+    padding-right: 10px;
+}
+
+#icons-container i
+{
+    font-size: 15px;
+}
+
+#menu-logo
+{
+    width: 50%;
+    height: auto;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA MÓVIL PORTRAIT*************************************/
+@media screen and (max-width: 320px)
+{
+
+#navbar
+{
+    height: 12vw;
+    justify-content: space-evenly;
+    top: 0;
+}
+
+.header-icons
+{
+    font-size: 13px;
+}
+
+#text-header-container
+{
+    font-size: 15px;
+}
+
+.desplegar-active
+{
+    top: 12vw !important;
+}
+
+#user-info
+{
+    width: 70vw;
+    height: 10vw;
+}
+
+#user-info > div > a, #user-info input
+{
+    font-size: 10px;
+}
+
+.ham-btn
+{
+    left: 4vw;
+    top: 4vw;
+}
+
+#menu-movil
+{
+    width: 45%;
+    left: -50%;
+}
+
+.btn-active
+{
+    left: 38% !important;
+}
+
+.menu-active
+{
+    left: 0%;
+}
+
+}

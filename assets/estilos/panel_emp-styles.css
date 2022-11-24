@@ -1,0 +1,1435 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap");
+
+:root {
+  --color-negro: black;
+  --color-blanco: white;
+  --color-azul: #103c8a;
+  --color-celeste: #46b9d6;
+  --color-turquesa: #02a6c6;
+  --color-verde: #033440;
+  --color-blanco-azulado: rgb(245, 250, 255);
+}
+
+/*************************************DESARROLLO PARA ESCRITORIO*************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbar {
+  width: 100vw;
+  height: 5vw;
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid #cccccc;
+  color: var(--color-turquesa);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+}
+
+.ham-btn {
+  display: none;
+  position: absolute;
+}
+
+#logo {
+  height: 70%;
+  width: auto;
+}
+
+#logo > img {
+  width: 100%;
+  height: 100%;
+}
+
+#text-header-container {
+  font-family: Signika, sans-serif;
+  font-size: 1.2vw;
+  font-weight: 600;
+}
+
+#user-main-container
+{
+  width: 10vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+#user-main-container > i
+{
+  position: relative;
+  cursor: pointer;
+  transition: all .2s;
+  font-size: 15px;
+}
+
+#user-main-container > i:hover
+{
+  color: var(--color-azul);
+}
+
+#user-main-container > i > div
+{
+  width: 5px;
+  height: 5px;
+  background-color: red;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+#menu-notificaciones
+{
+  position: absolute;
+  top: calc(5vw - 1px);
+  width: 15vw;
+  max-width: 15vw;
+  max-height: 20vw;
+  z-index: 2;
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+}
+
+.notificaciones-active
+{
+  display: flex !important;
+}
+
+#menu-notificaciones > li
+{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid #ccc;
+  padding: 2px;
+}
+
+#menu-notificaciones > li > p
+{
+  text-align: center;
+  height: 3.5vw;
+  padding: 2px;
+  font-size: 12px;
+  font-family: signika, sans-serif;
+  font-weight: 600;
+  user-select: none;
+}
+
+#user-container {
+  font-size: 15px;
+  font-family: Signika, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all ease 0.17s;
+  z-index: 30;
+}
+
+#user-container:hover {
+  color: var(--color-azul);
+}
+
+#user-icon {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+#user-info {
+  width: 25vw;
+  height: 3vw;
+  background-color: var(--color-blanco);
+  position: fixed;
+  top: 0vw;
+  justify-content: space-around;
+  right: 0vw;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  transition: all ease 0.25s;
+  z-index: 20;
+}
+
+#user-info div {
+  width: 50%;
+  border-right: 1px solid #cccccc;
+  text-align: center;
+}
+
+.desplegar-active {
+  top: 5vw !important;
+}
+
+#user-info a {
+  text-decoration: none;
+  font-size: 0.9vw;
+  color: var(--color-turquesa);
+  font-weight: 600;
+  font-family: signika, sans-serif;
+  transition: all ease 0.18s;
+}
+
+#user-info a:hover {
+  color: var(--color-azul);
+  font-weight: 600;
+}
+
+#logout {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+  color: var(--color-turquesa);
+  text-align: center;
+  font-family: signika, sans-serif;
+  font-size: 1vw;
+  font-weight: 600;
+  transition: all ease 0.18s;
+  cursor: pointer;
+}
+
+#logout:hover {
+  color: var(--color-azul);
+}
+
+#panel {
+  width: 20vw;
+  height: calc(100% - 5vw);
+  position: fixed;
+  left: 0;
+  top: 5vw;
+  background: linear-gradient(to bottom, var(--color-turquesa), var(--color-azul) 90%);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 25px;
+  align-items: flex-start;
+  font-size: 1vw;
+  font-weight: 600;
+  font-family: Signika, sans-serif;
+  color: var(--color-blanco);
+}
+
+#panel > div {
+  transition: all ease 0.17s;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  padding: 15px 0;
+}
+
+#panel > div:hover {
+  font-size: 1.2vw;
+}
+
+#function-container {
+  width: 80vw;
+  height: calc(100vh - 5vw);
+  margin-top: 5vw;
+  background-color: rgb(255, 249, 241);
+  position: relative;
+  margin-left: 20vw;
+  overflow: hidden;
+  font-family: Signika, sans-serif;
+}
+
+.function-containers {
+  top: -100%;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  padding: 25px;
+}
+
+.function-containers > h2 {
+  font-size: 2vw;
+  color: var(--color-azul);
+}
+
+#reponer-stock-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 20%);
+  grid-template-rows: 3.5vw repeat(5, 35vw) 2vw;
+  overflow-y: scroll;
+  justify-content: space-around;
+  grid-gap: 25px;
+  padding: 0;
+  padding-bottom: 15px;
+}
+
+#change-page-container
+{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-height: 2vw;
+  gap: 20px;
+}
+
+#change-page-container > button
+{
+  width: 10%;
+  font-size: 13px;
+  padding: 5px;
+  font-family: signika, sans-serif;
+  border: none;
+  background-color: rgb(240, 240, 240);
+  color: rgb(105, 105, 105);
+  transition: all .2s;
+  cursor: pointer;
+}
+
+#change-page-container > button:hover
+{
+  background-color: rgb(216, 216, 216);
+}
+
+#search-bar {
+  width: 100%;
+  /* height: 3.5vw; */
+  height: 100%;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  background-color: var(--color-blanco);
+  border: 1px solid #ccc;
+  border-top: none;
+  position: sticky;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 5px;
+  top: -1px;
+  z-index: 50;
+}
+
+#search-bar > input:first-child {
+  border-radius: 5px;
+  font-family: signika, sans-serif;
+  font-size: 17px;
+  border: 2px solid var(--color-blanco);
+  background-color: #eeeeee;
+  padding: 5px;
+  width: 75%;
+  outline: none;
+  transition: all ease 0.3s;
+}
+
+#search-bar > input:first-child:focus {
+  border: 2px solid var(--color-turquesa);
+}
+
+#search-bar > input:not(input:first-child) {
+  border-radius: 5px;
+  width: 10%;
+  height: 60%;
+  border: 1px solid #cccccc;
+  transition: all ease 0.2s;
+  font-family: signika, sans-serif;
+  font-size: 15px;
+  color: var(--color-blanco);
+  background-color: var(--color-turquesa);
+}
+
+#search-bar > input:not(input:first-child):hover {
+  color: var(--color-blanco);
+  cursor: pointer;
+  background-color: var(--color-azul);
+}
+
+.prods {
+  background-color: var(--color-blanco);
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 100%;
+  height: 35vw;
+}
+
+.prod-img-container {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.prod-img-container > img {
+  transition: all ease 0.2s;
+  width: 100%;
+  height: 100%;
+}
+
+.prod-img-container > img:hover {
+  transform: scale(1.1);
+}
+
+.prod-info {
+  width: 100%;
+  height: 50%;
+  font-family: Signika, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-blanco);
+  padding: 0px 5px;
+}
+
+.prod-info > input[type="number"] {
+  outline: none;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  display: none;
+}
+
+.mensajesStock {
+  width: 100%;
+}
+
+.botonesStock {
+  border-radius: 10px;
+  padding: 2px 5px;
+  font-family: Signika, sans-serif;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  border: 1px solid var(--color-negro);
+}
+.botonesStock:hover {
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+}
+
+.visibility-button {
+  width: 2vw;
+  height: 2vw;
+  font-size: 17px;
+  border-radius: 100%;
+  border: 1px solid var(--color-negro);
+  color: var(--color-celeste);
+  transition: all 0.2s;
+  overflow: hidden;
+}
+
+.visibility-button:hover {
+  background-color: var(--color-celeste);
+  color: var(--color-blanco) !important;
+  cursor: pointer;
+}
+
+.check-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.function-in {
+  transition: all ease 0.5s;
+  /* top: 15% !important; */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.function-out {
+  transition: all ease 0.5s;
+  top: 150% !important;
+}
+
+#col-select-container {
+  display: none;
+}
+
+#gestiones-container {
+  height: 100%;
+  /* background-color: red; */
+  padding: 0;
+}
+
+#filtro-gestion {
+  width: 100%;
+  height: 4vw;
+  padding: 5px 20px;
+  background-color: var(--color-blanco);
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-family: signika, sans-serif;
+  font-size: 18px;
+}
+
+#filtro-gestion > label:first-child {
+  width: 20%;
+}
+
+#gestiones-select {
+  width: 40%;
+  height: 1.5vw;
+  font-family: signika, sans-serif;
+  font-size: 15px;
+  outline: none;
+}
+
+#busqueda-gestion-fecha {
+  display: none;
+  height: 1.5vw;
+  font-family: signika, sans-serif;
+  margin-left: 10px;
+  outline: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background-color: var(--color-turquesa);
+  border-radius: 10px;
+}
+
+#busqueda-gestion {
+  height: 1.5vw;
+  font-family: signika, sans-serif;
+  outline: none;
+}
+
+#filtro-gestion > input[type="submit"] {
+  width: 8%;
+  font-family: signika, sans-serif;
+  font-size: 15px;
+  border: 1px solid var(--color-negro);
+  height: 1.5vw;
+  margin-left: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#filtro-gestion > input[type="submit"]:hover {
+  background-color: var(--color-turquesa);
+  color: var(--color-blanco);
+}
+
+input[type="date"] {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.checkbox-labels {
+  display: none;
+  width: fit-content;
+  padding: 2px 5px;
+  font-size: 15px;
+}
+
+#clear-filters {
+  display: none;
+}
+
+#gestiones {
+  height: calc(100% - 4vw);
+  width: 100%;
+  background-color: var(--color-blanco-azulado);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+#gestiones > h1 {
+  font-size: 22px;
+  color: var(--color-azul);
+  font-family: signika, sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+}
+
+#gestiones-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#gestiones-cabecera {
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+  font-size: 16px;
+  height: 2vw;
+}
+
+#gestiones-cabecera > th {
+  width: fit-content;
+  text-align: center;
+  border-right: 1px solid var(--color-blanco);
+}
+
+#gestiones-table td {
+  border: 1px solid var(--color-blanco);
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.gestion-row {
+  height: 3vw;
+  font-size: 14px;
+}
+
+.gestion-row:nth-child(even) {
+  background-color: var(--color-blanco);
+}
+
+.gestion-row:nth-child(odd) {
+  background-color: #d4f6ff;
+}
+
+/*******************DESARROLLO PARA TABLET LANDSCAPE (LARGE)**********************************************/
+@media screen and (max-width: 1024px)
+{
+#navbar {
+ height: 7vw;
+}
+
+#text-header-container,
+#user-container,
+#user-main-container i
+{
+  font-size: 20px;
+}
+
+#user-main-container
+{
+  width: 15vw;
+}
+
+#user-info {
+  height: 5vw;
+}
+
+#user-info a,
+#user-info input {
+  font-size: 14px;
+}
+
+.desplegar-active {
+  top: 7vw !important;
+}
+
+#menu-notificaciones
+{
+  top: calc(7vw - 1px);
+}
+
+#menu-notificaciones > li > p
+{
+  font-size: 10px;
+  height: 4vw;
+}
+
+#panel {
+  height: calc(100vh - 7vw);
+  top: 7vw;
+}
+
+#function-container {
+  height: calc(100vh - 7vw);
+  margin-top: 7vw;
+}
+
+#panel > div {
+  font-size: 15px;
+}
+
+#panel > div:hover {
+  font-size: 16px;
+}
+
+#reponer-stock-container {
+  grid-template-columns: repeat(3, 25%);
+  grid-template-rows: unset;
+}
+
+.prods {
+ height: 50vw;
+}
+
+.prod-img-container {
+  height: 50%;
+}
+
+.prod-info {
+  height: 50%;
+}
+
+.prod-info > input[type="number"] {
+  height: 15%;
+  font-size: 14px;
+  width: 80%;
+  border: 1px solid #ccc;
+}
+
+.visibility-button
+{
+  height: 3vw;
+  width: 3vw;
+}
+
+#search-bar {
+  height: 5vw;
+  top: 0;
+}
+
+#change-page-container
+{
+  max-height: 3vw;
+  height: vw;
+}
+
+#search-bar input:last-child {
+  font-size: 13px;
+}
+
+.mensajesStock {
+  font-size: 13px;
+}
+
+#filtro-gestion > label:first-child {
+  width: 25%;
+}
+
+#gestiones-select {
+  width: 50%;
+  height: 90%;
+  border: 1px solid #ccc;
+}
+
+#filtro-gestion input[type="submit"]
+{
+  height: 80%;
+}
+
+#filtro-gestion input[type="text"],
+#filtro-gestion input[type="date"] {
+  height: 70%;
+  border: 1px solid #ccc;
+}
+
+#gestiones-cabecera {
+  font-size: 14px;
+}
+
+}
+
+/************************DESARROLLO TABLET PORTRAIT (large)*************************************/
+@media screen and (max-width: 768px) {
+#navbar {
+  height: 10vw;
+  padding-left: 100px;
+}
+
+.ham-btn {
+  display: block;
+  color: var(--color-turquesa);
+  font-size: 25px;
+  left: 25px;
+  top: 3vw;
+  cursor: pointer;
+  z-index: 60;
+  transition: all ease 0.5s;
+}
+
+#panel {
+  width: 40vw;
+  top: 0;
+  left: -45vw;
+  z-index: 50;
+  padding-top: 50px;
+  height: 100vh;
+  transition: all ease 0.5s;
+}
+
+#function-container {
+  width: 100vw;
+  height: calc(100vh - 10vw);
+  margin-top: 10vw;
+  margin-left: 0;
+}
+
+#panel > div {
+  font-size: 18px;
+}
+
+#panel > div:hover {
+  font-size: 20px;
+}
+
+.menu-active {
+  left: 0 !important;
+}
+
+.btn-active {
+  left: 35vw !important;
+  transform: rotate(180deg) !important;
+  color: var(--color-blanco) !important;
+}
+
+#logo {
+  display: none;
+}
+
+#user-info {
+  width: 30vw;
+  height: 6vh;
+}
+
+.desplegar-active {
+  top: 10vw !important;
+}
+
+#user-main-container
+{
+  width: 25vw;
+}
+
+#menu-notificaciones
+{
+  width: 25vw;
+  top: calc(10vw - 1px);
+  max-width: unset;
+  max-height: 50vw;
+}
+
+#menu-notificaciones > li > p
+{
+  height: 7vw;
+  font-size: 12px;
+}
+
+#text-header-container, #user-container, #user-main-container i {
+  font-size: 25px;
+}
+#search-bar {
+  top: 0;
+  height: 8vw;
+}
+
+#reponer-stock-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 40%);
+}
+
+.prods {
+  width: 40%;
+  height: 85vw;
+}
+
+.prod-info p,
+.prod-info label {
+  font-size: 18px;
+}
+
+.botonesStock {
+  width: 40%;
+  height: 15%;
+  font-size: 18px;
+}
+
+.visibility-button
+{
+  width: 5vw;
+  height: 5vw;
+  font-size: 25px;
+}
+
+#col-select-container {
+  width: 100%;
+  height: 10vw;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+  justify-content: center;
+  font-size: 10px;
+  background-color: var(--color-blanco-azulado);
+}
+
+#col-select-container > label,
+#col-select-container input[type="button"] {
+  width: 100%;
+  height: 100%;
+  line-height: 4vw;
+  font-size: 15px;
+  text-align: center;
+}
+
+.hide-cols {
+  display: none !important;
+}
+
+#col-select-container input[type="button"] {
+  width: 50%;
+  justify-self: center;
+  font-size: 15px;
+}
+
+#filtro-gestion {
+  height: 6vw;
+}
+
+#gestiones {
+  height: calc(100% - 6vw - 10vw);
+}
+
+#gestiones-cabecera {
+  height: 4vw;
+}
+
+.gestion-row {
+  height: 5vw;
+}
+
+}
+
+/************************DESARROLLO TABLET LANDSCAPE (SMALL)************************************/
+@media screen and (max-width: 920px) and (max-height: 540px) {
+#navbar {
+  height: 5vw;
+}
+
+#text-header-container,
+#user-container,
+#user-main-container i
+{
+  font-size: 14px;
+}
+
+#user-info {
+  height: 5.5vw;
+  width: 35vw;
+  top: -20vw;
+  }
+
+#menu-notificaciones
+{
+  top: calc(5vw - 1px);
+}
+
+#menu-notificaciones > li > p
+{
+  height: 5vw;
+}
+  
+  #user-info a,
+  #user-info input {
+    font-size: 12px;
+  }
+  
+  .desplegar-active {
+    top: 5vw !important;
+  }
+  
+  #panel {
+    height: calc(100vh - 5vw);
+    top: 5vw;
+  }
+
+  #function-container {
+    height: calc(100vh - 5vw);
+    margin-top: 5vw;
+  }
+
+  #reponer-stock-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 40vw);
+  }
+
+  #panel > div {
+    font-size: 11px;
+  }
+
+  #panel > div:hover {
+    font-size: 12px;
+  }
+
+  .prods {
+    width: 35%;
+    height: 50vw;
+  }
+
+  #search-bar {
+    width: 100%;
+    height: 5vw;
+    top: 0;
+    z-index: 50;
+  }
+
+  #search-bar input:first-child {
+    width: 65%;
+    height: 70%;
+  }
+
+  #search-bar > input:not(input:first-child) {
+    width: 15%;
+    font-size: 14px;
+  }
+
+  .prod-img-container {
+    height: 60%;
+  }
+
+  .prod-info {
+    height: 40%;
+  }
+
+  .visibility-button
+  {
+    width: 4vw;
+    height: 4vw;
+    font-size: 20px;
+  }
+
+  #filtro-gestion {
+    height: 5vw;
+  }
+
+  #gestiones {
+    height: calc(100% - 5vw);
+  }
+
+  #filtro-gestion > label:first-child {
+    width: 30%;
+  }
+
+  #gestiones-select {
+    height: 100%;
+    width: 50%;
+  }
+
+  #filtro-gestion input[type="text"],
+  #filtro-gestion input[type="date"] {
+    height: 80%;
+  }
+
+  #filtro-gestion input[type="submit"] {
+    height: 80%;
+    width: 15%;
+  }
+
+  #gestiones-cabecera,
+  .gestion-row {
+    font-size: 12px;
+  }
+}
+
+/**********************DESARROLLO MÓVIL LANDSCAPE******************************/
+@media screen and (max-width: 740px) and (max-height: 415px) {
+  #navbar {
+    height: 6vw;
+  }
+
+  #function-container {
+    height: calc(100vh - 6vw);
+    margin-top: 6vw;
+  }
+
+  #search-bar
+  {
+    height: 7vw;
+  }
+
+  .ham-btn
+  {
+    font-size: 18px;
+    top: 2vw;
+  }
+
+  #user-main-container
+  {
+    width: 20vw;
+  }
+
+  #panel {
+    top: 0;
+    height: 100vh;
+    padding-top: 20px;
+  }
+
+  #panel > div {
+    font-size: 12px;
+  }
+
+  #user-info {
+    height: 5vw;
+  }
+
+  #menu-notificaciones
+  {
+    top: 6vw;
+    max-height: 30vw;
+  }
+
+  #menu-notificaciones > li > p
+  {
+    height: 7vw;
+  }
+
+  .desplegar-active {
+    top: 6vw !important;
+  }
+
+  .prods {
+    height: 90vw;
+  }
+
+  .prod-img-container {
+    height: 45%;
+  }
+
+  .prod-info {
+    height: 55%;
+  }
+
+  .prod-info > input[type="number"] {
+    height: 10%;
+  }
+
+  .prod-info > input[type="button"] {
+    height: 12%;
+    width: 50%;
+  }
+
+  #search-bar {
+    top: -1px;
+  }
+
+  .mensajesStock {
+    font-size: 12px;
+  }
+
+  #col-select-container {
+    display: none;
+  }
+
+  #filtro-gestion {
+    height: 7vw;
+  }
+
+  #filtro-gestion label {
+    font-size: 11px;
+  }
+
+  #filtro-gestion input[type="submit"] {
+    width: 10%;
+    height: 90%;
+  }
+
+  #gestiones {
+    height: calc(100% - 7vw);
+  }
+
+  #gestiones-cabecera {
+    height: 2vw;
+  }
+
+  .gestion-row {
+    height: 3vw;
+  }
+}
+
+/*******************DESARROLLO TABLET PORTRAIT(small)*************************/
+@media screen and (max-width: 480px)
+{
+  #navbar {
+    height: 15vw;
+  }
+
+  #text-header-container {
+    font-size: 16px;
+  }
+
+  .ham-btn {
+    top: 4.5vw;
+    font-size: 22px;
+    z-index: 65;
+  }
+
+  #user-main-container
+  {
+    width: 30vw;
+  }
+  
+  #menu-notificaciones
+  {
+    top: 15vw;
+    width: 35vw;
+    max-height: 100vw;
+  }
+
+  #menu-notificaciones > li > p
+  {
+    height: 12vw;
+  }
+
+  #user-container,
+  #user-main-container i {
+    font-size: 15px;
+  }
+
+  #user-info {
+    width: 40vw;
+    height: 12vw;
+  }
+
+  #user-info a,
+  #user-info input {
+    font-size: 12px;
+  }
+
+  #function-container {
+    width: 100vw;
+    margin-top: 15vw;
+    height: calc(100vh - 15vw);
+  }
+
+  #panel {
+    height: 100vh;
+    top: 0;
+    z-index: 60;
+  }
+
+  #panel > div {
+    font-size: 12px;
+  }
+
+  #panel > div:hover {
+    font-size: 13px;
+  }
+
+  .btn-active {
+    left: 28vw !important;
+  }
+
+  .menu-active {
+    left: 0 !important;
+  }
+
+  .desplegar-active {
+    top: 15vw !important;
+  }
+
+  #search-bar {
+    height: 12vw;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    z-index: 100;
+  }
+
+  #search-bar input:first-child {
+    width: 55%;
+  }
+
+  #search-bar > input:not(input:first-child)
+  {
+    width: 20%;
+  }
+
+  #reponer-stock-container {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 80vw;
+  }
+
+  .prods {
+    width: 80%;
+    height: 150vw;
+  }
+
+  .prod-img-container {
+    height: 55%;
+  }
+
+  .prod-info {
+    height: 45%;
+  }
+
+  .prod-info > input[type="number"] {
+    height: 7vw;
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .prod-info p,
+  .prod-info label {
+    font-size: 18px;
+  }
+
+  .botonesStock {
+    width: 60%;
+    font-size: 18px;
+  }
+
+  .visibility-button
+  {
+    width: 10vw;
+    height: 10vw;
+    font-size: 25px;
+  }
+
+  #col-select-container {
+    width: 100%;
+    height: 15vw;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(2, 50%);
+    justify-content: center;
+    font-size: 10px;
+    background-color: var(--color-blanco-azulado);
+  }
+
+  #col-select-container > label,
+  #col-select-container input[type="button"] {
+    width: 100%;
+    height: 100%;
+    line-height: 7vw;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .hide-cols {
+    display: none !important;
+  }
+
+  #col-select-container input[type="button"] {
+    width: 50%;
+    justify-self: center;
+  }
+
+  #gestiones {
+    height: calc(100% - 15vw - 20vw);
+  }
+
+  #filtro-gestion {
+    height: 20vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px;
+    justify-content: center;
+    background-color: var(--color-blanco);
+  }
+
+  #filtro-gestion > label:first-child {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  #gestiones-select {
+    height: 7vw;
+    font-size: 14px;
+  }
+
+  #filtro-gestion label {
+    font-size: 12px;
+  }
+
+  #filtro-gestion input[type="submit"],
+  #filtro-gestion input[type="date"],
+  #filtro-gestion input[type="text"] {
+    height: 5vw;
+    width: 20%;
+    font-size: 12px;
+  }
+
+  #filtro-gestion input[type="text"] {
+    width: 45%;
+  }
+
+  #filtro-gestion input[type="submit"] {
+    width: 15%;
+    font-size: 10px;
+  }
+
+  #gestiones-cabecera {
+    height: 7vw;
+    font-size: 60%;
+  }
+
+  .gestion-row {
+    font-size: 14px;
+  }
+}
+
+/*************************************DESARROLLO PARA MÓVIL PORTRAIT*************************************/
+@media screen and (max-width: 320px) {
+  #navbar {
+    height: 15vw;
+    padding-left: 80px;
+  }
+
+  #text-header-container,
+  #user-container {
+    font-size: 12px;
+  }
+
+  .ham-btn {
+    font-size: 15px;
+  }
+
+  #user-container i {
+    font-size: 10px;
+  }
+
+  #menu-notificaciones > li > p
+  {
+    height: 20vw;
+  }
+
+  #panel {
+    padding-top: 50px;
+  }
+
+  #user-info {
+    width: 50vw;
+  }
+
+  #user-info a,
+  #user-info input {
+    font-size: 9px;
+  }
+
+  .desplegar-active {
+    top: 15vw !important;
+  }
+
+  .prods {
+    height: 150vw;
+  }
+
+  .visibility-button
+  {
+    font-size: 22px;
+  }
+
+  .botonesStock
+  {
+    font-size: 15px;
+    height: 10vw;
+    width: 40vw;
+  }
+
+}

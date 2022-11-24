@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap');
+
+:root
+{
+    --color-negro:  black;
+    --color-blanco: white;
+    --color-azul: #103c8a;
+    --color-celeste: #46b9d6;
+    --color-turquesa: #02a6c6;
+    --color-verde: #033440;
+}
+
+/*************************************DESARROLLO PARA ESCRITORIO*************************************/
+
+body
+{
+    padding: 0;
+    margin: 0%;
+    background-color: rgb(15, 41, 58);
+    overflow: hidden;
+}
+
+#fondo-movil
+{
+    display: none;
+}
+
+#fondo
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+#container
+{
+    position: absolute;
+    width: 25vw;
+    height: 35vw;
+    left: calc(50% - 12.5vw);
+    top: calc(50% - 17.5vw);
+    background-color: var(--color-verde);
+    /* border: 2px solid var(--color-blanco); */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Signika';
+    z-index: 5;
+    justify-content: space-around;
+}
+
+#icon
+{
+    width: 25%;
+    height: auto;
+    margin-top: 5%;
+}
+
+#container > h2
+{
+    font-size: 1.7vw;
+    font-weight: 600;
+    color: var(--color-celeste);
+}
+
+::placeholder
+{
+    color: var(--color-blanco);
+}
+
+#nombre
+{
+    width: 60%;
+    height: 5%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: var(--color-turquesa);
+    border-bottom: 1px solid #a1c4d9;
+    font-family: 'Signika';
+    font-size: 17px;
+}
+
+#passwd
+{
+    margin-top: 5%;
+    width: 60%;
+    height: 5%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: var(--color-turquesa);
+    border-bottom: 1px solid #a1c4d9;
+    font-family: 'Signika';
+    font-size: 17px;
+}
+
+#confirmar
+{
+    width: 50%;
+    height: 8%;
+    border-radius: 6px;
+    border: 2px solid var(--color-negro);
+    margin-top: 15%;
+    color: #033440;
+    margin-bottom: 5%;
+    cursor: pointer;
+    background-color: #d5d5d5;
+    transition: all ease 0.2s;
+    font-family: 'Signika';
+    font-size: 15px;
+    border: 0px;
+}
+
+input[type="button"]:hover
+{
+    background-color: var(--color-turquesa) !important;
+}
+
+a
+{
+    font-size: 12px;
+    color: #b4cbdd;
+    margin-bottom: 5%;
+}
+
+#errores
+{
+    bottom: 5px;
+    color: #ff312a;
+    font-family: signika, sans-serif;
+}
+
+
+/*******************DESARROLLO PARA TABLET LANDSCAPE (LARGE)**********************************************/
+@media screen and (max-width: 1024px)
+{
+
+#container
+{
+    width: 45vw;
+    left: calc(50% - 22.5%);
+    height: 50vw;
+    top: calc(50% - 42.5%);
+}
+
+#icon
+{
+    width: 15%;
+    margin: 0;
+}
+
+#container > h2
+{
+    font-size: 18px;
+    margin: 0;
+}
+
+#nombre
+{
+    width: 40%;
+    font-size: 16px;
+    margin: 0;
+}
+
+#passwd
+{
+    width: 40%;
+    font-size: 16px;
+    margin: 0;
+}
+
+#confirmar
+{
+    width: 30%;
+    font-size: 16px;
+    height: 4vw;
+    margin: 0;
+}
+
+a
+{
+    font-size: 14px;
+    margin: 0;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA TABLET PORTRAIT (LARGE)*************************************/
+
+@media screen and (max-width: 768px){
+
+#fondo
+{
+    display: none;
+}
+    
+#fondo-movil
+{
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    
+#container
+{
+    height: 100vw;
+    top: calc(50% - 50vw);
+    width: 70vw;
+    left: calc(50% - 35vw);
+}
+    
+#nombre
+{
+    width: 55%;
+}
+    
+#passwd
+{
+    width: 55%;
+}
+    
+#confirmar
+{
+    width: 30%;
+    height: 6%;
+    font-size: 17px;
+}
+    
+a
+{
+    font-size: 15px;
+}
+
+
+}
+
+
+/************************DESARROLLO TABLET LANDSCAPE (SMALL)************************************/
+@media screen and (max-width: 920px) and (max-height: 540px)
+{
+
+#container
+{
+    width: 60vw;
+    left: calc(50% - 30vw);
+    height: 35vw;
+    top: calc(50% - 17.5vw);
+}
+
+#icon
+{
+    width: 5%;
+    margin: 5px 0 10px 0;
+}
+
+#container > h2
+{
+    margin: 0 0 10px 0;
+}
+
+#nombre
+{
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 50%;
+}
+
+#passwd
+{
+    margin: 0;
+    margin-bottom: 30px;
+    width: 50%;
+    font-size: 12px;
+}
+
+#confirmar
+{
+    margin: 0 0 15px 0;
+    width: 20%;
+    height: 3vw;
+    font-size: 12px;
+}
+
+a
+{
+    font-size: 12px;
+    margin: 0 0 5px 0;
+}
+
+#errores
+{
+    margin: 0;
+    position: relative;
+}
+
+}
+
+/*******************DESARROLLO TABLET PORTRAIT(small)*************************/
+@media screen and (max-width: 480px){
+
+#container
+{
+    width: 70vw;
+    height: 140vw;
+    left: calc(50% - 35vw);
+    top: calc(50% - 70vw);
+}
+
+#icon
+{
+    width: 30%;
+}
+
+#nombre
+{
+    width: 60%;
+    font-size: 14px;
+}
+
+#passwd
+{
+    width: 60%;
+    font-size: 14px;
+}
+
+#container > h2
+{
+    font-size: 14px;
+    margin: 0%;
+}
+
+#confirmar
+{
+    margin: 0vw;
+    width: 40%;
+    height: 10vw;
+    font-size: 14px;
+}
+
+a
+{
+    margin: 0;
+    font-size: 3vw;
+}
+
+}
+
+/********************DESARROLLO PARA MÓVIL LANDSCAPE***********************/
+
+@media screen and (max-width: 740px) and (max-height: 415px)
+{
+
+#container
+{
+    width: 60vw;
+    height: 85vh;
+    left: calc(50% - 30vw);
+    top: calc(50% - 42.5vh);
+}
+
+#icon
+{
+    width: 3vw;
+}
+
+#container h2
+{
+    font-size: 15px;
+    margin-bottom: 2vw;
+}
+
+#nombre
+{
+    width: 35%;
+    margin-bottom: 2vw;
+    font-size: 12px;
+}
+
+#passwd
+{
+    width: 35%;
+    font-size: 12px;
+    margin-bottom: 4vw;
+}
+
+#confirmar
+{
+    width: 20vw;
+    height: 3.5vw;
+    font-size: 12px;
+    margin: 0;
+}
+
+#container a
+{
+    font-size: 12px;
+    margin: 0;
+}
+
+
+#errores
+{
+    position: relative;
+    font-size: 12px;
+}
+
+}
+
+
+/*************************************DESARROLLO PARA MÓVIL PORTRAIT*************************************/
+@media screen and (max-width: 320px)
+{
+
+#container
+{
+    width: 80%;
+    height: 130vw;
+    left: 10%;
+    top: calc(50% - 65vw);
+}
+
+#icon
+{
+    width: 20%;
+}
+
+#confirmar, #nombre, #passwd
+{
+    font-size: 12px;
+}
+
+#container h2
+{
+    font-size: 5vw;
+}
+
+#container a
+{
+    font-size: 3.5vw;
+}
+
+}
+
+
